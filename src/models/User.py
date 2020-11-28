@@ -8,7 +8,7 @@ class User(db.Model):
     email = db.Column(db.String(), nullable=False, unique=True)
     password = db.Column(db.String(), nullable=False)
 
-    account_id = db.relationship(Account, backref="user")
+    # account_id = db.relationship(Account, backref="user")
 
     def __repr__(self):
         return f"<User {self.email}>"
