@@ -1,5 +1,6 @@
 from main import db
 from datetime import datetime
+from models.Activity import Activity
 
 
 class Account(db.Model):
@@ -12,6 +13,7 @@ class Account(db.Model):
     created_on = db.Column(db.DateTime(), nullable=False, default = datetime.now)
     is_active = db.Column(db.Boolean(), default=True)
     created_by = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=False)
+    activity_id = db.relationship(Activity, backref="account", uselist=True)
 
     def __repr__(self):
         return f"<User {self.company_name}>"

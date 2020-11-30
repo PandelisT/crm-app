@@ -27,7 +27,7 @@ def new_account():
     new_account.website = account_fields["website"]
     new_account.industry = account_fields["industry"]
     new_account.is_active= account_fields["is_active"]
-        
+
     user.account_id.append(new_account)
         
     db.session.add(new_account)
